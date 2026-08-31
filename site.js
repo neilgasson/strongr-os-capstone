@@ -37,3 +37,13 @@
   lightbox.addEventListener('click', event => { if (event.target === lightbox) close(); });
   document.addEventListener('keydown', event => { if (event.key === 'Escape' && lightbox.classList.contains('is-open')) close(); });
 })();
+
+(() => {
+  if (document.querySelector('script[data-evan-capstone-agent]')) return;
+
+  const script = document.createElement('script');
+  script.src = 'https://cdn.jotfor.ms/agent/embedjs/01a045773f3070008abb403d7934d70558a5/embed.js';
+  script.async = true;
+  script.dataset.evanCapstoneAgent = 'true';
+  document.body.appendChild(script);
+})();
